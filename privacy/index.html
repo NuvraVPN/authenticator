@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy · N-Authenticator</title>
+  <meta name="description" content="How N-Authenticator handles your data: codes stay on your devices, no accounts, no analytics, no tracking.">
+  <link rel="icon" href="../assets/icon.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <main>
+    <a class="brand" href="../"><img src="../assets/icon.png" alt="">N-Authenticator</a>
+
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective September 28, 2026</p>
+
+    <p>N-Authenticator (&ldquo;the app&rdquo;) is a two-factor authentication app for iPhone and iPad made by Dan Shapira (&ldquo;I&rdquo;, &ldquo;me&rdquo;). This policy explains what information the app handles, where it is kept, and who can see it.</p>
+
+    <div class="card">
+      <h2 style="margin-top:0">The short version</h2>
+      <ul>
+        <li>The app has <strong>no accounts, ads, analytics or tracking</strong>, and contains no third-party code.</li>
+        <li><strong>Your codes and secret keys stay on your devices</strong>, in the iOS Keychain. I never receive them.</li>
+        <li>The app itself <strong>never connects to the internet</strong>.</li>
+        <li>If you turn on the optional <strong>Network Shield</strong>, your device&rsquo;s DNS lookups go, encrypted, to Cloudflare&rsquo;s security resolver. They are never sent to me.</li>
+      </ul>
+    </div>
+
+    <h2>Information kept on your device</h2>
+    <ul>
+      <li><strong>Your accounts.</strong> For each account you add: the service and account names, the secret key, and code settings (type, algorithm, digits, interval or counter). These are stored in the iOS Keychain, encrypted by iOS, and readable only by the app while your device is unlocked.</li>
+      <li><strong>Your app PIN.</strong> The PIN itself is never stored. The app keeps only a salted, one-way hash (PBKDF2-SHA256) in a device-only Keychain item that never syncs and can&rsquo;t be restored onto a different device.</li>
+      <li><strong>Settings.</strong> Your choices such as auto-lock timing, when to clear the clipboard, and whether Face ID and iCloud sync are on, plus a count of recent wrong PIN attempts so repeated guesses can be slowed down.</li>
+      <li><strong>Face ID and Touch ID.</strong> Handled entirely by iOS; the app only learns whether you were recognized. It also keeps an opaque value from iOS that changes when the enrolled faces or fingerprints change, so it can ask for your PIN after such a change. That value contains no biometric data.</li>
+    </ul>
+
+    <h2>iCloud Keychain sync</h2>
+    <p>Sync is on by default and can be turned off in the app&rsquo;s Settings. When it&rsquo;s on, your accounts are saved as iCloud Keychain items, which Apple syncs to the devices signed in to your Apple Account. iCloud Keychain is end-to-end encrypted: neither Apple nor I can read your accounts. It is covered by <a href="https://www.apple.com/legal/privacy/">Apple&rsquo;s Privacy Policy</a>. Your PIN and settings never sync.</p>
+    <p>When sync is off, accounts are kept in device-only Keychain items that never sync and can&rsquo;t be restored onto a different device from a backup.</p>
+
+    <h2>Camera and photos</h2>
+    <ul>
+      <li><strong>Camera.</strong> Used only while the Scan QR Code screen is open, to read a QR code. The video is processed on the device in real time; nothing is recorded, saved or sent.</li>
+      <li><strong>Photos.</strong> If you use &ldquo;Choose from Photos&rdquo;, only the image you pick is read, on the device, to find a QR code. The app can&rsquo;t see the rest of your library and doesn&rsquo;t keep the image.</li>
+    </ul>
+
+    <h2>Clipboard</h2>
+    <p>When you tap a code, it is copied to the clipboard as local-only, so it isn&rsquo;t shared with your other devices through Universal Clipboard. It is cleared automatically after the time you choose in Settings (one minute by default), unless you choose Never.</p>
+
+    <h2 id="network-shield">Network Shield (optional)</h2>
+    <p>The Network Shield is off unless you turn it on. When you do, iOS asks for permission to add a VPN configuration named &ldquo;Authenticator Shield&rdquo;. It runs entirely on your device; there is no VPN server.</p>
+    <ul>
+      <li>Only <strong>DNS lookups</strong> go through it: the names of the sites and services your device connects to, such as <em>example.com</em>. All other traffic goes out normally and is never seen by the Shield.</li>
+      <li>Each lookup is sent over an encrypted HTTPS connection (DNS-over-HTTPS) to Cloudflare&rsquo;s <a href="https://developers.cloudflare.com/1.1.1.1/setup/">1.1.1.1 for Families</a> security resolver, which refuses to resolve domains associated with malware and phishing.</li>
+      <li>Like any DNS service, Cloudflare receives the domain names being looked up and your device&rsquo;s IP address. According to Cloudflare&rsquo;s <a href="https://developers.cloudflare.com/1.1.1.1/privacy/public-dns-resolver/">resolver privacy commitments</a>, which also apply to 1.1.1.1 for Families, Cloudflare doesn&rsquo;t sell this data or use it to target ads, and deletes its resolver logs and truncated IP addresses within 25 hours.</li>
+      <li>Nothing from the Shield is sent to me or stored by the app.</li>
+    </ul>
+    <p>You can turn the Shield off at any time in the app&rsquo;s Settings or in iOS Settings &rarr; VPN.</p>
+
+    <h2>Beta testing through TestFlight</h2>
+    <p>If you test a beta version through Apple&rsquo;s TestFlight, Apple shares some information with me, as described in the TestFlight app and <a href="https://www.apple.com/legal/privacy/">Apple&rsquo;s Privacy Policy</a>. This can include the name and email address you were invited with, your device model and iOS version, installs and crash reports, and any feedback or screenshots you choose to send. I use it only to fix problems and improve the app, and I don&rsquo;t share it.</p>
+
+    <h2>Crash reports</h2>
+    <p>If you allow it in iOS (Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements &rarr; Share With App Developers), Apple may give me anonymous crash and performance reports. The app doesn&rsquo;t collect analytics of its own.</p>
+
+    <h2>Children</h2>
+    <p>The app is not directed at children under 13, and it doesn&rsquo;t collect personal information from anyone.</p>
+
+    <h2>Keeping and deleting your data</h2>
+    <ul>
+      <li>To delete an account, swipe left on it, tap Delete and confirm. With sync on, it is removed from all your devices.</li>
+      <li>To remove synced copies from iCloud, turn off iCloud Keychain Sync in the app&rsquo;s Settings and tap &ldquo;Delete Codes from iCloud&rdquo;.</li>
+      <li>iOS can keep Keychain items after an app is deleted, so delete your accounts in the app first if you want them removed from the device.</li>
+    </ul>
+    <p>Because I don&rsquo;t hold any of your data, there is nothing for me to export or delete, but you&rsquo;re always welcome to ask.</p>
+
+    <h2>Security</h2>
+    <p>Accounts are protected by the iOS Keychain and iOS data protection, the app locks with Face ID or your PIN, codes are hidden in the app switcher and while your screen is recorded or mirrored, and repeated wrong PINs trigger increasing waiting periods.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the new version will be posted on this page with a new effective date, and significant changes will be mentioned in the app&rsquo;s release notes.</p>
+
+    <h2>Contact</h2>
+    <p>Questions or requests about privacy: <a href="mailto:dan.shapira.app@proton.me">dan.shapira.app@proton.me</a></p>
+
+    <footer>
+      <span>&copy; 2026 Dan Shapira</span>
+      <a href="../">N-Authenticator</a>
+      <a href="../support/">Support</a>
+    </footer>
+  </main>
+</body>
+</html>

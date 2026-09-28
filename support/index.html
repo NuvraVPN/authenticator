@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support · N-Authenticator</title>
+  <meta name="description" content="Help with N-Authenticator: adding accounts, sync, moving to a new iPhone, PIN and Face ID, and the Network Shield.">
+  <link rel="icon" href="../assets/icon.png">
+  <link rel="apple-touch-icon" href="../assets/icon.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <main>
+    <a class="brand" href="../"><img src="../assets/icon.png" alt="">N-Authenticator</a>
+
+    <h1>Support</h1>
+    <p class="meta">Can&rsquo;t find an answer below? Email <a href="mailto:dan.shapira.app@proton.me">dan.shapira.app@proton.me</a> and include your iPhone model and iOS version.</p>
+
+    <h2>Getting started</h2>
+    <details open>
+      <summary>How do I add an account?</summary>
+      <p>Turn on two-factor authentication in the website or app you want to protect, then tap <strong>+</strong> in N-Authenticator:</p>
+      <ul>
+        <li><strong>Scan QR Code</strong> and point the camera at the code on screen, or tap <strong>Choose from Photos</strong> to use a screenshot.</li>
+        <li><strong>Enter Setup Key</strong> if the site shows a key instead (often under &ldquo;Can&rsquo;t scan it?&rdquo;). You can also paste an <code>otpauth://</code> link into the key field.</li>
+      </ul>
+      <p>Then type the current code back into the website to finish setting it up.</p>
+    </details>
+    <details>
+      <summary>Can I import my accounts from Google Authenticator?</summary>
+      <p>Yes. In Google Authenticator, choose <strong>Transfer accounts &rarr; Export accounts</strong>, then scan the QR code (or each of the QR codes) it shows with <strong>+ &rarr; Scan QR Code</strong>.</p>
+    </details>
+    <details>
+      <summary>How do I copy a code?</summary>
+      <p>Tap it. Copied codes stay on this device (they aren&rsquo;t sent to your other devices through Universal Clipboard) and are cleared automatically; you can change the delay in <strong>Settings &rarr; Clear Clipboard</strong>.</p>
+    </details>
+
+    <h2>Codes not working</h2>
+    <details>
+      <summary>A website says my code is wrong</summary>
+      <p>Time-based codes depend on your iPhone&rsquo;s clock. Make sure <strong>Settings &rarr; General &rarr; Date &amp; Time &rarr; Set Automatically</strong> is on, then try the next code. If it still fails, remove the account from the website&rsquo;s security settings and set it up again.</p>
+    </details>
+    <details>
+      <summary>What is the refresh button on some accounts?</summary>
+      <p>Those are counter-based (HOTP) accounts. Tap refresh only when the service asks for a new code, since each tap moves the counter forward.</p>
+    </details>
+
+    <h2>Sync and new devices</h2>
+    <details>
+      <summary>How does iCloud sync work?</summary>
+      <p>With <strong>Settings &rarr; iCloud Keychain Sync</strong> on, your accounts sync end-to-end encrypted through iCloud Keychain to your other devices signed in to the same Apple Account. It needs iCloud Keychain turned on: iOS Settings &rarr; [your name] &rarr; iCloud &rarr; <strong>Passwords</strong> (called <strong>Passwords &amp; Keychain</strong> on older iOS versions). Changes can take a few minutes and appear the next time you open the app (or pull down on the list to refresh).</p>
+    </details>
+    <details>
+      <summary>How do I move my codes to a new iPhone?</summary>
+      <p>If iCloud Keychain Sync is on, sign in to the same Apple Account on the new iPhone, install N-Authenticator and open it; your accounts appear after syncing. If sync is off, open each account (swipe left &rarr; Edit), tap <strong>Show Transfer QR Code</strong> and scan it with the new iPhone. Keep your old phone until everything works on the new one.</p>
+    </details>
+    <details>
+      <summary>Why is sync off on one of my devices?</summary>
+      <p>Sync is set per device. Turning it off keeps the codes on that device only, and the copies already in iCloud stay available to your other devices until you tap <strong>Delete Codes from iCloud</strong>.</p>
+    </details>
+
+    <h2>PIN and Face ID</h2>
+    <details>
+      <summary>I forgot my PIN</summary>
+      <p>On the lock screen, tap <strong>Forgot PIN?</strong>, confirm with your iPhone passcode (or Face ID), and choose a new PIN. Your accounts are kept.</p>
+    </details>
+    <details>
+      <summary>Face ID stopped unlocking the app</summary>
+      <p>For your security, the app asks for your PIN once whenever the faces or fingerprints enrolled on your iPhone change. Enter your PIN and Face ID works again. You can turn it on or off in <strong>Settings &rarr; Face ID</strong>.</p>
+    </details>
+    <details>
+      <summary>Why are my codes hidden sometimes?</summary>
+      <p>Codes are hidden while your screen is being recorded, mirrored or shared with AirPlay, and the app switcher shows a cover screen instead of your codes.</p>
+    </details>
+
+    <h2>Network Shield</h2>
+    <details>
+      <summary>What does the Network Shield do?</summary>
+      <p>It&rsquo;s an optional on-device VPN, with no server, that sends your iPhone&rsquo;s DNS lookups, encrypted, to Cloudflare&rsquo;s security resolver, which blocks sites known for phishing and malware. Phishing pages are the most common way sign-in codes get stolen. No other traffic goes through it. See the <a href="../privacy/#network-shield">privacy policy</a> for details.</p>
+    </details>
+    <details>
+      <summary>A website won&rsquo;t load with the Shield on</summary>
+      <p>The site may be on Cloudflare&rsquo;s list of dangerous domains, or your network may block encrypted DNS. Turn the Shield off in the app&rsquo;s Settings (or iOS Settings &rarr; VPN) and try again, and let me know the site so I can look into it.</p>
+    </details>
+
+    <h2>Removing your data</h2>
+    <details>
+      <summary>How do I delete accounts or everything?</summary>
+      <p>Swipe left on an account, tap Delete and confirm; with sync on, it&rsquo;s removed from all your devices. iOS can keep Keychain items after an app is deleted, so delete your accounts in the app first if you want them gone. Before removing an account, make sure you&rsquo;ve turned off two-factor authentication for it or have another way to sign in.</p>
+    </details>
+
+    <footer>
+      <span>&copy; 2026 Dan Shapira</span>
+      <a href="../">N-Authenticator</a>
+      <a href="../privacy/">Privacy</a>
+    </footer>
+  </main>
+</body>
+</html>
